@@ -1,0 +1,33 @@
+/*This code uses an array of 8 LED pins, 
+which are set as outputs in the setup() function. 
+In the loop() function, the code turns on each LED in sequence, 
+delays for a short period of time, 
+and then turns off each LED in sequence. 
+This process repeats indefinitely, 
+creating a "chasing" effect where the LEDs appear 
+to move in a line.
+*/
+
+int LEDpins[] = {2, 3, 4, 5, 6, 7, 8, 9}; // Define the pins for the LEDs
+
+int delayTime = 100; // Define the delay between LED transitions
+
+void setup() {
+ 
+  for (int i = 0; i < 8; i++) {  // Set the LED pins as outputs
+    pinMode(LEDpins[i], OUTPUT);
+  }
+}
+
+void loop() {
+
+  for (int i = 0; i < 8; i++) {   // Turn on each LED in sequence
+    digitalWrite(LEDpins[i], HIGH);
+    delay(delayTime);
+  }
+ 
+  for (int i = 0; i < 8; i++) {  // Turn off each LED in sequence
+    digitalWrite(LEDpins[i], LOW);
+    delay(delayTime);
+  }
+}
