@@ -1,0 +1,24 @@
+/*This code uses pin 13, which is connected to an on-board LED on my Arduino board. 
+Turns an LED on for one second, then off for one second, repeatedly.
+In the setup() function, the code sets the LED pin as an output. 
+In the loop() function, the code turns on the LED, waits for 1 second using the delay() function, turns off the LED, and waits for another 1 second. 
+This process repeats indefinitely, causing the LED to blink on and off at a regular interval.
+
+You can adjust the delay() function calls to change the blinking speed of the LED.*/
+int LEDpin = 13; // Define the pin for the LED
+
+void setup() {
+ 
+  pinMode(LEDpin, OUTPUT);// Set the LED pin as an output
+}
+
+void loop() {
+
+  digitalWrite(LEDpin, HIGH); // Turn on the LED
+ 
+  delay(1000); // Wait for 1 second
+  
+  digitalWrite(LEDpin, LOW); // Turn off the LED
+ 
+  delay(1000);  // Wait for 1 second
+}
